@@ -1,0 +1,46 @@
+::-moz-selection {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+::selection {
+  background-color: $color-primary;
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  font-size: 62.5%; // 1rem = 10px, 10px / 16px = 62.5%ize: 75%; //1rem = 12, 12/16
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-size: $m-size;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.is-active {
+  font-size: 2rem;
+}
