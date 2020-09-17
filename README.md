@@ -1,1 +1,1 @@
-# expensify-app-course
+# expensify-app
