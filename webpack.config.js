@@ -5,11 +5,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env) => {
   const isProduction = env === 'production';
+
   const CSSExtract = new MiniCssExtractPlugin({
-    filename: '[name].[contentHash].css',
+    filename: 'styles.css',
+    //filename: '[name].[contentHash].css',
   });
+
   const HtmlPlugin = new HtmlWebpackPlugin({
     template: './src/index.html',
+    filename: '../index.html',
     minify: {
       removeAttributeQuotes: true,
       collapseWhitespace: true,
@@ -20,8 +24,9 @@ module.exports = (env) => {
   return {
     entry: './src/app.js',
     output: {
-      path: path.join(__dirname, 'public'),
-      filename: '[name].[contentHash].bundle.js',
+      path: path.join(__dirname, 'public', 'dist'),
+      filename: 'bundle.js',
+      //filename: '[name].[contentHash].bundle.js',
     },
     module: {
       rules: [
@@ -59,6 +64,7 @@ module.exports = (env) => {
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
+      publicPath: '/dist/',
     },
   };
 };
