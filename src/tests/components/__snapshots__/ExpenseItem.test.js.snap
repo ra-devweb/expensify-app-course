@@ -10,12 +10,10 @@ exports[`Should render expense item component correctly 1`] = `
     </h1>
   </Link>
   <p>
-    3500
+    35,00 MAD
   </p>
   <span>
-    (
-    0
-    )
+    January 1st, 1970
   </span>
 </div>
 `;
