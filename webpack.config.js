@@ -74,7 +74,9 @@ module.exports = (env) => {
       new CleanWebpackPlugin(),
       HtmlPlugin,
       new webpack.DefinePlugin({
-        FIREBASE_API_KEY: FIREBASE_API_KEY,
+        'process.env.FIREBASE_API_KEY': JSON.stringify(
+          process.env.FIREBASE_API_KEY
+        ),
         'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(
           process.env.FIREBASE_AUTH_DOMAIN
         ),
