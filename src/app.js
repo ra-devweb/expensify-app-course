@@ -10,34 +10,9 @@ import './styles/styles.scss';
 import 'react-dates/initialize';
 import 'react-dates/lib/css/_datepicker.css';
 
+import './firebase/firebase';
+
 const store = configureStore();
-
-store.dispatch(
-  addExpense({
-    description: 'Gaz bill',
-    note: 'Done!',
-    amount: 200,
-    createdAt: 3000,
-  })
-);
-
-store.dispatch(
-  addExpense({
-    description: 'Water bill',
-    note: 'Done!',
-    amount: 3200,
-    createdAt: 2000,
-  })
-);
-
-store.dispatch(
-  addExpense({
-    description: 'Rent',
-    note: 'Done!',
-    amount: 3600,
-    createdAt: 4000,
-  })
-);
 
 const jsx = (
   <Provider store={store}>
