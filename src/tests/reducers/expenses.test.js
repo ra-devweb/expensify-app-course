@@ -70,3 +70,14 @@ test("Should if don't find id of delete expense", () => {
 
   expect(state).toEqual(expensesData);
 });
+
+test('Should set expenses', () => {
+  const action = {
+    type: 'SET_EXPENSES',
+    expenses: [expensesData[1]],
+  };
+
+  const state = expensesReducer(expensesData, action);
+
+  expect(state).toEqual([expensesData[1]]);
+});
