@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -21,7 +21,7 @@ module.exports = (env) => {
     //filename: '[name].[contentHash].css',
   });
 
-  const HtmlPlugin = new HtmlWebpackPlugin({
+  /* const HtmlPlugin = new HtmlWebpackPlugin({
     template: './src/index.html',
     filename: '../index.html',
     minify: {
@@ -29,7 +29,7 @@ module.exports = (env) => {
       collapseWhitespace: true,
       removeComments: true,
     },
-  });
+  }); */
 
   return {
     entry: './src/app.js',
@@ -63,16 +63,16 @@ module.exports = (env) => {
             },
           ],
         },
-        {
+        /* {
           test: /\.html$/,
           use: ['html-loader'],
-        },
+        }, */
       ],
     },
     plugins: [
       CSSExtract,
       new CleanWebpackPlugin(),
-      HtmlPlugin,
+      //HtmlPlugin,
       new webpack.DefinePlugin({
         'process.env.FIREBASE_API_KEY': JSON.stringify(
           process.env.FIREBASE_API_KEY
