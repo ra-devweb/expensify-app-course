@@ -8,6 +8,7 @@ import {
   deleteExpense,
   setExpenses,
   startSetExpenses,
+  startDeleteExpense,
 } from '../../actions/expenses';
 import database from '../../firebase/firebase';
 
@@ -134,4 +135,26 @@ test('Should fetch data from firebase', (done) => {
     });
     done();
   });
+});
+
+test('Should remove expense from firebase', (done) => {
+  const store = createMockStore({});
+
+  const id = '123456abc';
+
+  store
+    .dispatch(startDeleteExpense(id))
+    .then(() => {
+      const action = store.getActions();
+      expect(action[0]).toEqual({
+        type: 'DELETE_EXPENSE',
+        id,
+      });
+
+      return database.ref(`expenses/${id}`).once('value');
+    })
+    .then((snapshot) => {
+      expect(snapshot.val()).toBeFalsy();
+      done();
+    });
 });
