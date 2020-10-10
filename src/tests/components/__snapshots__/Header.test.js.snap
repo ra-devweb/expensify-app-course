@@ -10,8 +10,7 @@ exports[`Should render Header component correctly 1`] = `
       <li>
         <NavLink
           activeClassName="is-active"
-          exact={true}
-          to="/"
+          to="/dashboard"
         >
           Dashboard
         </NavLink>
@@ -33,6 +32,11 @@ exports[`Should render Header component correctly 1`] = `
         </NavLink>
       </li>
     </ul>
+    <button
+      onClick={[Function]}
+    >
+      Logout
+    </button>
   </nav>
 </header>
 `;
