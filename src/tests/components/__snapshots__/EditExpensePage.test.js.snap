@@ -14,10 +14,22 @@ exports[`Should render Edit expense page correctly 1`] = `
     }
     onSubmit={[Function]}
   />
-  <button
-    onClick={[Function]}
+  <div
+    className="container"
   >
-    Remove
-  </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#e3242b",
+          "color": "white",
+          "marginBottom": "1rem",
+        }
+      }
+    >
+      Remove expense
+    </button>
+  </div>
 </div>
 `;

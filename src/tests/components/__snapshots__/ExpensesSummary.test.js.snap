@@ -1,39 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should rendering ExpensesSummary correctly 1`] = `
-<div>
-  <h1>
-    Viewing 
-     
-    expenses
-     totalling 
-    0.00 $
-  </h1>
+<div
+  className="summary"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="summary__title"
+    >
+      Viewing 
+      <span />
+       
+      expenses
+       totalling 
+      <span>
+        0.00 $
+      </span>
+    </h1>
+    <div
+      className="summary__box-btn"
+    >
+      <Link
+        className="summary__link btn"
+        to="/create"
+      >
+        ✎ Add expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Should rendering ExpensesSummary correctly with multiple expenses 1`] = `
-<div>
-  <h1>
-    Viewing 
-    3
-     
-    expenses
-     totalling 
-    2,553,667.77 $
-  </h1>
+<div
+  className="summary"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="summary__title"
+    >
+      Viewing 
+      <span>
+        3
+      </span>
+       
+      expenses
+       totalling 
+      <span>
+        2,553,667.77 $
+      </span>
+    </h1>
+    <div
+      className="summary__box-btn"
+    >
+      <Link
+        className="summary__link btn"
+        to="/create"
+      >
+        ✎ Add expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`Should rendering ExpensesSummary correctly with single expense 1`] = `
-<div>
-  <h1>
-    Viewing 
-    1
-     
-    expense
-     totalling 
-    2.55 $
-  </h1>
+<div
+  className="summary"
+>
+  <div
+    className="container"
+  >
+    <h1
+      className="summary__title"
+    >
+      Viewing 
+      <span>
+        1
+      </span>
+       
+      expense
+       totalling 
+      <span>
+        2.55 $
+      </span>
+    </h1>
+    <div
+      className="summary__box-btn"
+    >
+      <Link
+        className="summary__link btn"
+        to="/create"
+      >
+        ✎ Add expense
+      </Link>
+    </div>
+  </div>
 </div>
 `;

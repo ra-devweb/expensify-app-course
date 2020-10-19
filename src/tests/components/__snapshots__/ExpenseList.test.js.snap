@@ -1,15 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render expense list with NO expenses 1`] = `
-<div>
-  <p>
-    No expense
-  </p>
+<div
+  className="container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body list-message"
+  >
+    <span>
+      No expenses
+    </span>
+  </div>
+  <br />
 </div>
 `;
 
 exports[`Should render expense list with expenses 1`] = `
-<div>
+<div
+  className="container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
   <ExpenseItem
     amount={3500}
     createdAt={0}
@@ -34,5 +81,6 @@ exports[`Should render expense list with expenses 1`] = `
     key="3"
     note=""
   />
+  <br />
 </div>
 `;
