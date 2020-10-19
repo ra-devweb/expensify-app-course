@@ -22,7 +22,9 @@ export class EditExpensePage extends React.Component {
           expense={this.props.expense}
           onSubmit={this.updateExpense}
         />
-        <button onClick={this.deleteExpense}>Remove</button>
+        <div className='container'>
+          <button style={{backgroundColor: '#e3242b', color: 'white', marginBottom: '1rem'}} className='btn' onClick={this.deleteExpense}>Remove expense</button>
+        </div>
       </div>
     );
   }

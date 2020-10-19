@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import numeral from 'numeral';
 
@@ -13,10 +14,16 @@ export const ExpensesSummary = ({ expenseCount, expensesTotal }) => {
   );
 
   return (
-    <div>
-      <h1>
-        Viewing {expenseCount} {expenseWord} totalling {formattedExpensesTotal}
-      </h1>
+    <div className='summary'>
+      <div className='container'>
+        <h1 className='summary__title'>
+          Viewing <span>{expenseCount}</span> {expenseWord} totalling <span>{formattedExpensesTotal}</span>
+        </h1>
+
+        <div className='summary__box-btn'>
+          <Link className='summary__link btn' to='/create'>&#9998; Add expense</Link>
+        </div>
+      </div>
     </div>
   );
 };

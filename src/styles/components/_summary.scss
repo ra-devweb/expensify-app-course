@@ -1,0 +1,26 @@
+.summary {
+  background-color: #e7e7e7;
+  padding: $l-size 0;
+}
+
+.summary__title {
+  margin: 0;
+  font-weight: 300;
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+.summary__box-btn {
+  margin-top: $m-size;
+  width: 15rem;
+}
+
+.summary__link {
+  text-decoration: none;
+  background-color: $color-primary !important;
+  color: white;
+  font-size: 1.5rem !important;
+  font-weight: bold
+}

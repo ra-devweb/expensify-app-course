@@ -45,7 +45,7 @@ export default class ExpenseForm extends React.Component {
 
     if (!this.state.description || !this.state.amount) {
       this.setState(() => ({
-        error: 'Please provide description and amount.',
+        error: 'Please provide description and amount.*',
       }));
     } else {
       this.setState(() => ({ error: '' }));
@@ -61,11 +61,16 @@ export default class ExpenseForm extends React.Component {
   render() {
     return (
       <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmitForm}>
-          <div>
+        <div className='summary'>
+          <h2 className='text-center summary__title'>{this.props.expense ? `Update expense ${this.state.description}` : 'Add new expense'}</h2>
+        </div>
+        <div className='container'>
+        {this.state.error && <p className='form__error'>{this.state.error}</p>}
+        <form onSubmit={this.onSubmitForm} className='form form--column'>
+          <div className='form__group form__group--unset'>
             <label htmlFor='description'>Description</label>
             <input
+              className='form__input'
               type='text'
               id='description'
               placeholder='Description'
@@ -74,9 +79,10 @@ export default class ExpenseForm extends React.Component {
               autoFocus
             />
           </div>
-          <div>
+          <div className='form__group form__group--unset'>
             <label htmlFor='amount'>Amount</label>
             <input
+              className='form__input'
               id='amount'
               type='text'
               placeholder='Amount'
@@ -84,25 +90,31 @@ export default class ExpenseForm extends React.Component {
               onChange={this.onChangeAmount}
             />
           </div>
-          <SingleDatePicker
-            date={this.state.createdAt}
-            onDateChange={this.onChangeDate}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.onFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
-          <div>
+          <div className='form__group form__group--unset'>
+            <label htmlFor='date'>Pick date</label>
+            <SingleDatePicker
+              date={this.state.createdAt}
+              onDateChange={this.onChangeDate}
+              focused={this.state.calendarFocused}
+              onFocusChange={this.onFocusChange}
+              numberOfMonths={1}
+              isOutsideRange={() => false}
+              block={() => true}
+            />
+          </div>
+          <div className='form__group form__group--unset'>
             <label htmlFor='note'>Note (Optional)</label>
             <textarea
+              className='form__area'
               id='note'
               placeholder='Add a note for expense'
               value={this.state.note}
               onChange={this.onChangeNote}
             ></textarea>
           </div>
-          <button>Add expense</button>
+          <button style={{marginBottom: '2rem'}} className='btn btn--primary'>{this.props.expense ? 'Update expense' : 'Add expense'}</button>
         </form>
+      </div>
       </div>
     );
   }

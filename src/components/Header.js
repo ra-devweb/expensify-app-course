@@ -1,33 +1,29 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { startLogout } from '../actions/auth';
+import { history } from '../routes/AppRouter';
 
 export const Header = ({ logOut }) => (
-  <header>
-    <h1>Expensify</h1>
+  <header className='header'>
+    <div className='container'>
+      <nav className='navigation'>
+        <ul className='navigation__list'>
+          <li className='navigation__item'>
 
-    <nav>
-      <ul>
-        <li>
-          <NavLink to='/dashboard' activeClassName='is-active'>
-            Dashboard
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/Create' activeClassName='is-active'>
-            Create
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/help' activeClassName='is-active'>
-            Help
-          </NavLink>
-        </li>
-      </ul>
-      <button onClick={logOut}>Logout</button>
-    </nav>
+            { history.location.pathname === '/dashboard' ? '' : <span className='navigation__go-back' onClick={() => history.goBack()}>&#10229;</span>}
+
+            &nbsp;
+            
+            <Link className='navigation__link' to='/dashboard'>
+              <h1 className='navigation__logo'>Expensify</h1>
+            </Link>
+          </li>
+        </ul>
+        <button className='navigation__logout btn-small btn-small--back-h' onClick={logOut}>Logout</button>
+      </nav>
+    </div>
   </header>
 );
 

@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form--column {
+  flex-direction: column;
+}
+
+.form__group {
+  margin-right: $s-size;
+  margin-top: $s-size;
+  margin-bottom: $s-size;
+
+  @include respond(tab-port) {
+    margin-bottom: $s-size;
+  }
+}
+
+.form__group--unset {
+  margin-right: unset !important;
+
+  @include respond(tab-port) {
+    margin-bottom: unset !important;
+  }
+}
+
+.form__input {
+  display: block;
+  font-weight: 300;
+  font-size: 1.5rem;
+  border: 1px solid #cacccd;
+  padding: $s-size;
+  font-style: inherit;
+  height: 4.5rem;
+  width: 100%;
+}
+
+.form__select {
+  @extend .form__input
+}
+
+.form__area {
+  @extend .form__input;
+  height: 10rem;
+}
+
+.form__error {
+  margin: $s-size 0;
+  font-style: italic;
+  color: #e3242b;
+}
+
+/* .SingleDatePickerInput__withBorder {
+  width: 100%;
+} */

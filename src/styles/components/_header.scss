@@ -1,0 +1,40 @@
+.header {
+  background-color: $color-primary-light;
+  border-top: 0.3rem solid darken($color-primary-light, 40%);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $s-size 0;
+}
+
+.navigation__list {
+  list-style: none;
+}
+
+.navigation__item {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__go-back {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0.3rem 0.3rem 0rem darken(white, 60%);
+}
+
+.navigation__logo {
+  margin: 0;
+}
+
+.navigation__logout {
+}

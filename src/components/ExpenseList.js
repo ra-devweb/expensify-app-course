@@ -5,7 +5,13 @@ import selectExpenses from '../selectors/expenses';
 import ExpenseItem from './ExpenseItem';
 
 export const ExpenseList = (props) => (
-  <div>
+  <div className='container'>
+    <div className='list-header'>
+      <div className='show-for-mobile'>Expenses</div>
+      <div className='show-for-desktop'>Expense</div>
+      <div className='show-for-desktop'>Amount</div>
+    </div>
+
     {props.expenses.length === 0 ? (
       <p>No expense</p>
     ) : (
@@ -13,6 +19,7 @@ export const ExpenseList = (props) => (
         return <ExpenseItem key={expense.id} {...expense} />;
       })
     )}
+    <br />
   </div>
 );
 

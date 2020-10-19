@@ -1,0 +1,41 @@
+.list-header {
+    background-color: $off-white;
+    border: 1px solid darken($off-white, 7%);
+    color: $grey;
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size $m-size;
+}
+
+.list-body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-decoration: none;
+    border: 1px solid darken($off-white, 7%);
+    border-top: none;
+    color: $dark-grey;
+    padding: $s-size;
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: $off-white
+    }
+
+    @media (min-width: $desktop-breakpoint) {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $m-size;
+    }
+}
+
+.list-title {
+    
+}
+
+.list-date {
+
+}
+
+.list-amount {}
